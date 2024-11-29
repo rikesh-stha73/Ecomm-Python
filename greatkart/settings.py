@@ -142,3 +142,10 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: "danger",
 }
+
+# SMTP CONFIGURATION
+
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '2810bcc33a97c2'
+EMAIL_HOST_PASSWORD = '58cf71a2b0e41f'
+EMAIL_PORT = '2525'
