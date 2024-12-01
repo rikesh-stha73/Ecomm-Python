@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -41,6 +44,7 @@ INSTALLED_APPS = [
     'category',
     'store',
     'carts',
+    'orders',
     
 
 ]
@@ -143,9 +147,16 @@ MESSAGE_TAGS = {
     messages.ERROR: "danger",
 }
 
-# SMTP CONFIGURATION
 
-EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_HOST_USER = '2810bcc33a97c2'
-EMAIL_HOST_PASSWORD = '58cf71a2b0e41f'
-EMAIL_PORT = '2525'
+# Load environment variables from the .env file
+load_dotenv()
+
+# Email configuration using environment variables
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = os.getenv('EMAIL_PORT')
+
+# khalti api key
+KHALTI_SECRET_KEY = os.getenv('KHALTI_SECRET_KEY')
+

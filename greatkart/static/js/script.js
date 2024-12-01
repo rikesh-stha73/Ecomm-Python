@@ -57,4 +57,7 @@ $(document).ready(function() {
     
 }); 
 // jquery end
-
+setTimeout(function() {
+    // Select the message and start the fadeout
+    document.getElementById('message').style.opacity = '0';
+}, 1000);
